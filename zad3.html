@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html>
+ <head>
+     <title>Zad 3</title>
+     <script>
+         function WeryfikujHaslo(){
+             var haslo = document.getElementById("Hasło").value;
+             if (haslo == ""){
+                result.innerHTML = "Hasło jest puste";
+                 komunikat.style.color = "purple";
+             }
+             else if (haslo.search("[0-9]") >=0 && haslo.length <=6){
+                result.innerHTML = "Hasło jest średnie";
+                 result.style.color = "blue";
+             }
+
+             else if (haslo.search("[0-9]") >=0 && haslo.length >6){
+                result.innerHTML = "Hasło jest dobre";
+                 result.style.color = "green";
+             }
+                         
+             else {
+                result.innerHTML = "Hasło jest słabe";
+                 result.style.color = "yellow";
+             }
+         }
+     </script>
+ </head>
+ <body>
+     <label for="Hasło">Podaj hasło</label>     
+     <input type="text" id="Hasło">
+     <input type="submit" onclick=WeryfikujHaslo() value="Weryfikuj" />
+     <div id="result"></div>
+ </body>
+</html>
